@@ -32,7 +32,7 @@ export default function Contact() {
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         <ScrollAnimation>
           <h2 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="text-white">Let's Create</span>
+            <span className="text-white">Let&apos;s Create</span>
             <br />
             <span className="bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 bg-clip-text text-transparent">
               Something Amazing
@@ -42,7 +42,7 @@ export default function Contact() {
 
         <ScrollAnimation delay={0.2}>
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Have a project in mind? Let's collaborate and bring your vision to life with exceptional design.
+            Have a project in mind? Let&apos;s collaborate and bring your vision to life with exceptional design.
           </p>
         </ScrollAnimation>
 
