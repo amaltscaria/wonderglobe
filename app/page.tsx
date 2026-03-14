@@ -197,10 +197,10 @@ export default function Wonderglobe() {
               initial={{ y: 120 }}
               animate={heroLoaded ? { y: 0 } : {}}
               transition={{ duration: 1.2, ease, delay: 0.2 }}
-              className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight"
+              className="text-[clamp(2.5rem,10vw,8rem)] lg:text-9xl font-bold tracking-tight"
             >
-              <span className="bg-gradient-to-r from-orange-400 via-amber-300 to-yellow-400 bg-clip-text text-transparent">WONDER</span>
-              <span className="text-white">GLOBE</span>
+              <span className="bg-gradient-to-r from-orange-400 via-amber-300 to-yellow-400 bg-clip-text text-transparent block sm:inline">WONDER</span>
+              <span className="text-white block sm:inline">GLOBE</span>
             </motion.h1>
           </div>
 
@@ -306,22 +306,22 @@ export default function Wonderglobe() {
           </video>
 
           {/* Video controls — always visible */}
-          <div className="absolute top-6 right-6 z-20 flex items-center gap-3">
+          <div className="absolute top-4 right-4 md:top-6 md:right-6 z-20 flex items-center gap-2 md:gap-3">
             <motion.button
               onClick={togglePlay}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-4 py-2.5 bg-black/60 backdrop-blur-md border border-white/20 rounded-full text-white hover:border-orange-500/50 transition-colors text-sm"
+              className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-2 md:py-2.5 bg-black/60 backdrop-blur-md border border-white/20 rounded-full text-white hover:border-orange-500/50 transition-colors text-xs md:text-sm"
             >
               {isPlaying ? (
                 <>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-                  <span>Pause</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                  <span className="hidden sm:inline">Pause</span>
                 </>
               ) : (
                 <>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-                  <span>Play</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                  <span className="hidden sm:inline">Play</span>
                 </>
               )}
             </motion.button>
@@ -330,7 +330,7 @@ export default function Wonderglobe() {
               onClick={toggleMute}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`flex items-center gap-2 px-4 py-2.5 backdrop-blur-md border rounded-full text-sm transition-all duration-300 ${
+              className={`flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-2 md:py-2.5 backdrop-blur-md border rounded-full text-xs md:text-sm transition-all duration-300 ${
                 isMuted
                   ? 'bg-orange-500/90 border-orange-400 text-white shadow-lg shadow-orange-500/30'
                   : 'bg-black/60 border-white/20 text-white hover:border-orange-500/50'
@@ -338,13 +338,13 @@ export default function Wonderglobe() {
             >
               {isMuted ? (
                 <>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                  <span className="font-medium">Tap to Unmute</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                  <span className="font-medium">Unmute</span>
                 </>
               ) : (
                 <>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-                  <span>Sound On</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                  <span className="hidden sm:inline">Sound On</span>
                 </>
               )}
             </motion.button>
@@ -352,10 +352,10 @@ export default function Wonderglobe() {
 
           {/* Bottom overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-          <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 pointer-events-none">
-            <p className="text-orange-400 text-xs tracking-[0.3em] uppercase mb-3">8-Minute Walkthrough</p>
-            <h3 className="text-2xl md:text-4xl font-bold mb-2">WONDERGLOBE Prototype</h3>
-            <p className="text-gray-400 text-sm md:text-base max-w-lg">Complete interactive prototype demo with audio narration</p>
+          <div className="absolute bottom-0 left-0 right-0 p-4 md:p-12 pointer-events-none">
+            <p className="text-orange-400 text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase mb-2 md:mb-3">8-Minute Walkthrough</p>
+            <h3 className="text-lg md:text-4xl font-bold mb-1 md:mb-2">WONDERGLOBE Prototype</h3>
+            <p className="text-gray-400 text-xs md:text-base max-w-lg hidden sm:block">Complete interactive prototype demo with audio narration</p>
           </div>
         </motion.div>
       </section>
