@@ -30,7 +30,7 @@ yarn-error.log*
 .env
 
 # large video files
-public/videos/
+public/videos/wonderglobe-compressed.mp4
 
 # vercel
 .vercel

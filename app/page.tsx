@@ -302,7 +302,7 @@ export default function Wonderglobe() {
             playsInline
             poster="/images/projects/wonderglobe/homepage.png"
           >
-            <source src="/videos/wonderglobe-compressed.mp4" type="video/mp4" />
+            <source src="/videos/wonderglobe-cloud.mp4" type="video/mp4" />
           </video>
 
           {/* Video controls — always visible */}
